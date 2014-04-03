@@ -1,5 +1,7 @@
-<project name="example01" default="hello">
+<project name="example02" default="hello">
+  <property name="thingy" value="World" />
+
   <target name="hello">
-    <echo message="Hello World!" />
+    <echo message="Hello ${thingy}!" />
   </target>
 </project>
