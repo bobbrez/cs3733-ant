@@ -5,4 +5,9 @@
     <echo message="Setting up your sandbox directory" />
     <mkdir dir="sandboxes/${first_name}"/>
   </target>
+
+  <target name="clean">
+    <echo message="Removing your sandbox directory" />
+    <delete dir="sandboxes/${first_name}" />
+  </target>
 </project>
