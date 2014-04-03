@@ -1,13 +1,15 @@
-<project name="example04" default="setup">
-  <property name="first_name" value="bob" />
+<project name="example04" default="build">
+  <target name="build" depends="clean, setup">
+    <javac srcdir="src" destdir="build" includeantruntime="false" source="1.7" target="1.7" />
+  </target>
 
   <target name="setup">
-    <echo message="Setting up your sandbox directory" />
-    <mkdir dir="sandboxes/${first_name}"/>
+    <echo message="Setting up your build directory" />
+    <mkdir dir="build"/>
   </target>
 
   <target name="clean">
-    <echo message="Removing your sandbox directory" />
-    <delete dir="sandboxes/${first_name}" />
+    <echo message="Removing your build directory" />
+    <delete dir="build" />
   </target>
 </project>
