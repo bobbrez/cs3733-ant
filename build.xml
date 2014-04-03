@@ -1,7 +1,13 @@
-<project name="example02" default="hello">
+<project name="example03" default="all">
   <property name="thingy" value="World" />
 
   <target name="hello">
     <echo message="Hello ${thingy}!" />
   </target>
+
+  <target name="goodbye">
+    <echo message="Goodbye ${thingy}." />
+  </target>
+
+  <target name="all" depends="hello, goodbye" />
 </project>
