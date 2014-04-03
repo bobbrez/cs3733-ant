@@ -1,13 +1,17 @@
-<project name="example03" default="all">
-  <property name="thingy" value="World" />
-
-  <target name="hello">
-    <echo message="Hello ${thingy}!" />
+<project name="example04" default="wakeup">
+  <target name="wakeup">
+    <echo message="Wake up in the morning feeling like P Diddy." />
   </target>
 
-  <target name="goodbye">
-    <echo message="Goodbye ${thingy}." />
+  <target name="glasses" depends="wakeup">
+    <echo message="Grab my glasses, I'm out the door, I'm gonna hit this city." />
   </target>
 
-  <target name="all" depends="hello, goodbye" />
+  <target name="brush" depends="wakeup">
+    <echo message="Before I leave, brush my teeth with a bottle of Jack." />
+  </target>
+
+  <target name="leave" depends="glasses, brush">
+    <echo message="'Cause when I leave for the night, I ain't coming back." />
+  </target>
 </project>
